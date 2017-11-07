@@ -16,13 +16,13 @@ ENV REACT_APP_USERS_SERVICE_URL $REACT_APP_USERS_SERVICE_URL
 # install and cache app dependencies
 ADD package.json /usr/src/app/package.json
 RUN npm install --silent
-RUN npm install pushstate-server -g --silent
+RUN npm install react-scripts@0.9.5 -g --silent
 
 # add app
 ADD . /usr/src/app
 
 # build react app
-RUN npm run build
+#RUN npm run build
 
 # start app
-CMD ["pushstate-server", "build"]
+CMD ["npm", "start"]
